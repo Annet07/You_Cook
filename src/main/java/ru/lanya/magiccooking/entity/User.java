@@ -38,7 +38,7 @@ public class User {
     @OneToMany(mappedBy = "account")
     private List<User> subscriptions;
 
-    @OneToMany(mappedBy = "recipe")
+    @OneToMany(mappedBy = "account")
     private List<Recipe> recipes;
 
     @Enumerated(value = EnumType.STRING)

@@ -28,6 +28,6 @@ public class Recipe {
     @JoinTable(name = "author_id")
     private User author;
 
-    @ManyToMany(mappedBy = "users")
+    @ManyToMany(mappedBy = "recipeList")
     private List<Ingredient> ingredients;
 }
