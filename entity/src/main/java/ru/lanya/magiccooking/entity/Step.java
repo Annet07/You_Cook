@@ -1,7 +1,5 @@
 package ru.lanya.magiccooking.entity;
 
-
-import java.util.List;
 import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
@@ -11,25 +9,22 @@ import lombok.NoArgsConstructor;
 
 @Builder
 @Entity
-@Table(name = "recipe")
+@Table(name = "step")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Recipe {
+public class Step {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private String header;
+
+    private String descriptions;
+
+    private String link;
 
     @ManyToOne
-    @JoinTable(name = "author_id")
-    private User author;
-
-    @OneToMany(mappedBy = "step")
-    private List<Step> steps;
-
-    @ManyToMany(mappedBy = "recipeList")
-    private List<Ingredient> ingredients;
+    private Recipe recipe;
 }
